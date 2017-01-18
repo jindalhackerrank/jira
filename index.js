@@ -4,14 +4,14 @@ var swig  = require('swig');
 var http = require("http");
 var url = require("url");
 var config = new Object();
-config.username = process.env.app_username;
-config.password = process.env.app_password;
-config.host = process.env.app_host;
-config.stats = process.env.app_stats;
-config.associates = process.env.app_associates;
-config.managers = process.env.app_managers;
-config.refresh = process.env.app_refresh;
-config.MONGODB_URI = process.env.MONGODB_URI;
+config.username = "vgupt6";
+config.password = "April2018";
+config.host = "tools.publicis.sapient.com/jira";
+config.stats ="project = 'Richemontlt' AND status not in (Closed) AND issuetype ='Tech Story'";
+config.associates = "project = 'Richemontlt' AND status not in (Closed) AND issuetype = 'Tech Story'";
+config.managers = "project = 'Capabilities - Contribution' AND status not in (Closed)  AND issuetype = Story and labels in ('Manager', 'Sr_Manager','Director')  order by assignee, summary";
+config.refresh = "3600";
+config.MONGODB_URI = 'mongodb://localhost:27017/eyp';
 
 //console.log("config:"+JSON.stringify(config,null,2));
 
