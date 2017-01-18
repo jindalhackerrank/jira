@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<meta http-equiv="refresh" content="3600">
+		<meta charset="utf-8">
+	    <title>EYP Reflector</title>
+		<h1 style="font-family:Helvetica; font-size:32px; color:#999999;">EYP Reflector</h1>
+
+		<style>
+			body {
+	        text-align: center;
+	        padding: 0px;
+	        margin: 0px;
+		    }
+		    /* clearfix */
+
+		    .clear:before,
+		    .clear:after {
+		        content: "";
+		        display: table;
+		    }
+
+		    .clear:after {
+		        clear: both;
+		    }
+
+		    .clear {
+		        *zoom: 1;
+		    }
+
+		    .wrapper {
+		        position: absolute;
+		        top: 0;
+		        right: 0;
+		        bottom: 0;
+		        left: 0;
+		        margin: 40px;
+		        border: 1px solid #cccccc;
+		    }
+
+		    .gauge {
+		        display: block;
+		        float: left;
+		    }
+
+		    #g1 {
+		        width: 50%;
+		        font-size: 10px;
+		    }
+
+		    #g2 {
+		        width: 50%;
+		        font-size: 10px;
+		    }
+	    </style>
+	</head>
+
+
+	<body>
+		<!-- <div class="jumbotron text-center"> -->
+	    <div class="wrapper clear">
+	        <a href="/associates?monthIndex=0" style="font-family:Helvetica; font-size:15px;">
+	        	<div id="g1" class="gauge"></div>
+	        </a>
+	        <a href="/managers?monthIndex=0" style="font-family:Helvetica; font-size:15px;">
+	        	<div id="g2" class="gauge"></div> 	
+			</a>
+	    </div>
+	    <script src="assets/js/raphael-2.1.4.min.js"></script>
+	    <script src="assets/js/justgage.js"></script>
+	    <script>
+	    	document.addEventListener("DOMContentLoaded", function(event) {
+		        var g1, g2;
+
+		        g1 = new JustGage({
+		            id: "g1",
+		            value: {{statsJSON.coveredAssocsPercent}},
+		            min: 0,
+		            max: 100,
+		            title: "Associates & Sr. Associates",
+		            relativeGaugeSize: true,
+		            donut: true,
+		            titleFontFamily : "Helvetica"
+		        });
+
+		        g2 = new JustGage({
+		            id: "g2",
+		            value: {{statsJSON.coveredManagersPercent}},
+		            min: 0,
+		            max: 100,
+		            title: "Managers & Sr. Managers",
+		            /*label: "label",*/
+		            relativeGaugeSize: true,
+		            donut: true,
+		            titleFontFamily : "Helvetica"
+		        });
+		    });
+	    </script>
+	<!-- </div> -->
+	</body>
+</html>

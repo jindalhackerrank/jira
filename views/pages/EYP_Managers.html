@@ -1,0 +1,84 @@
+{% spaceless %}
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/bootstrap.css">
+		<link rel="stylesheet" href="/assets/css/eyp_custom.css">
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+
+		<meta http-equiv="refresh" content="3600">
+		<title>EYP Reflector - Managers & Senior Managers</title>
+	</head>
+	<body>
+		<h1 style="font-family:Helvetica; font-size:25px;">
+			<a href="/" style="font-family:Helvetica; font-size:15px;">
+				<img src="/assets/images/home.png" alt="EYP Reflector Home" style="width:50px;height:50px;border:0;">
+			</a>
+			Managers & Sr. Managers - {{jiraData.mmmyy}} EYP Conversation Progress
+		</h1>
+
+	<div class="container">
+		<div class="dropdown-managers">
+			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">EYP Conv. History
+			<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+					{% for row in jiraData.historyDropdown %}
+					<li><a href="/managers?monthIndex={{row.monthIndex}}">{{row.Label}}</a></li>
+					{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+		{% if !jiraData.isDataFound %}
+			<div> No Record Found. </div>
+		{% endif%}
+
+		{% if jiraData.isDataFound %}
+			<div class="container">
+				<div class="progress">
+						{% if jiraData.percentPeopleCovered.value < 40 %}
+							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{jiraData.percentPeopleCovered.value}} aria-valuemin="0" aria-valuemax="100" style="width:{{jiraData.percentPeopleCovered.value}}%">People Covered: {{jiraData.percentPeopleCovered.value}}%
+						{% elseif jiraData.percentPeopleCovered.value < 80 %}
+							<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={{jiraData.percentPeopleCovered.value}} aria-valuemin="0" aria-valuemax="100" style="width:{{jiraData.percentPeopleCovered.value}}%">People Covered: {{jiraData.percentPeopleCovered.value}}%
+						{% elseif jiraData.percentPeopleCovered.value <= 100 %}
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{jiraData.percentPeopleCovered.value}} aria-valuemin="0" aria-valuemax="100" style="width:{{jiraData.percentPeopleCovered.value}}%">People Covered: {{jiraData.percentPeopleCovered.value}}%
+						{%endif%}
+						</div>
+				</div>
+			</div>
+			<div width="99%" align="center">
+				<table class="eyp" >
+					{% for row in jiraData.twodArray %}
+						{% if loop.first %}
+						{% for record in row %}
+							<th class="eyp-cell" bgcolor="#e0e0d2">	{{ record.value}}</th>
+						{% endfor %}
+						{% endif %}
+					{% endfor %}
+					{% for row in jiraData.twodArray %}
+						{% if loop.first %}
+						{% else %}
+						<tr>
+						{% for record in row %}
+							{% if record.flagValue == 1 %}
+								<td class="eyp-cell" bgcolor="#47d147">
+							{%endif%}
+							{% if record.flagValue == 0%}
+								<td class="eyp-cell" bgcolor="#ff5c33">
+							{% endif %}
+							{% if record.flagValue == -1%}
+							<td>
+							{% endif %}
+							{{ record.value}}</td>
+						{% endfor %}
+						</tr>
+						{% endif %}
+					{% endfor %}
+				</table>
+			</div>
+		{% endif %}
+	<br>
+	&nbsp;&nbsp;<a href="/associates?monthIndex=0" style="font-family:Helvetica; font-size:15px;">Associates & Sr. Associates - EYP Conversation Progress</a>
+</body>
+</html>
+{% endspaceless %}

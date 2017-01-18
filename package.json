@@ -1,0 +1,27 @@
+{
+  "name": "eyp-reflector",
+  "version": "1.0.0",
+  "description": "Reflection of monthly conversations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-antariksh/EYP.git"
+  },
+  "author": "Antariksh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev-antariksh/EYP/issues"
+  },
+  "homepage": "https://github.com/dev-antariksh/EYP#readme",
+  "dependencies": {
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "jira-connector": "^2.3.0",
+    "mongodb": "^2.2.9",
+    "node-cron": "^1.1.1",
+    "swig": "^1.4.2"
+  }
+}

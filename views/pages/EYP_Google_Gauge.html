@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta http-equiv="refresh" content="3600">
+		<meta charset="utf-8">
+	    <title>EYP Reflector</title>
+		<h1 style="font-family:Helvetica; font-size:25px;">EYP Reflector</h1>
+		<div id="chart_div" style="width: 800px; height: 200px;"></div>
+		<br><br>
+		<div>
+			<a href="/associates" style="font-family:Helvetica; font-size:15px;">
+				Associates & Sr. Associates
+			</a>
+			<a href="/managers" style="font-family:Helvetica; font-size:15px;">
+				Managers & Sr. Managers'
+			</a>
+		</div>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+	      google.charts.load('current', {'packages':['gauge']});
+	      google.charts.setOnLoadCallback(drawChart);
+	      function drawChart() {
+
+	        var data = google.visualization.arrayToDataTable([
+	          ['Label', 'Value'],
+	          ['Associates & Sr. Associates', {{statsJSON.coveredAssocsPercent}}],
+	          ['Managers & Sr. Managers', {{statsJSON.coveredMangersPercent}}]
+	        ]);
+
+	        var options = {
+	          width: 1500, height: 300,
+	          redFrom: 0, redTo: 40,
+	          yellowFrom:40, yellowTo: 70,
+	          greenFrom:70, greenTo: 100
+	        };
+
+	        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+	        chart.draw(data, options);
+	      }
+	    </script>
+	  </head>
+	  <body>
+	  </body>
+</html>

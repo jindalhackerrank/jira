@@ -1,0 +1,7 @@
+table{width:99%;}
+.eyp  {border-collapse:collapse;border-spacing:0;}
+.eyp td{font-family:Helvetica, sans-serif;font-size:11px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;text-align:center;}
+.eyp th{font-family:Helvetica, sans-serif;font-size:11px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;text-align:center;}
+.eyp .eyp-cell{vertical-align:top}
+.dropdown-associates {position:absolute !important; margin-left: 1100px !important; margin-top: -50px !important}
+.dropdown-managers {position:absolute !important; margin-left: 1100px !important; margin-top: -50px !important}
