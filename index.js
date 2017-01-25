@@ -7,8 +7,8 @@ var config = new Object();
 config.username = "vgupt6";
 config.password = "April2018";
 config.host = "tools.publicis.sapient.com/jira";
-config.stats ="project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' ORDER BY assignee";
-config.associates = "project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' ORDER BY assignee";
+config.stats ="project = 'Richemontlt' AND status not in (Closed) AND issuetype ='Tech Story'";
+config.associates = "project = 'Richemontlt' AND status not in (Closed) AND issuetype = 'Tech Story'";
 config.managers = "project = 'Capabilities - Contribution' AND status not in (Closed)  AND issuetype = Story and labels in ('Manager', 'Sr_Manager','Director')  order by assignee, summary";
 config.refresh = "3600";
 config.MONGODB_URI = 'mongodb://localhost:27017/eyp';
@@ -42,7 +42,7 @@ var app = express();
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 8080;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
