@@ -71,7 +71,7 @@ app.get('/', function(req, res) {
 		console.log(statsJSON);
 		//console.log(JSON.stringify(statsJSON, null,2));
 		res.writeHead(200, {'Content-Type': 'text/html'});
-		//res.end(tpl({statsJSON}));	
+		res.end(tpl({statsJSON}));	
 	});
 });
 
