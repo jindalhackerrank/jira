@@ -5,7 +5,7 @@ var http = require("http");
 var url = require("url");
 var config = new Object();
 config.username = "vgupt6";
-config.password = "April2018";
+config.password = "May2018#";
 config.host = "tools.publicis.sapient.com/jira";
 config.stats ="project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' ORDER BY assignee";
 config.associates = "project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' ORDER BY assignee";
