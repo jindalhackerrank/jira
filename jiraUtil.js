@@ -8,6 +8,7 @@ module.exports = {
 
 	// for reflector home page
 	calculatePeopleByTitle: function (search){
+		console.log(JSON.stringify(search));
 		var jiraPeopleList = search;
 		var person = 0;
 		var noOfAL1 = 0, noOfAL2 = 0, noOfSAL1 = 0, noOfSAL2 = 0, noOfSAPM = 0, noOfManager = 0, noOfSrManager = 0, noOfDirector = 0;
