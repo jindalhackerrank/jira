@@ -9,7 +9,7 @@ config.password = "May2018#";
 config.host = "tools.publicis.sapient.com/jira";
 config.stats ="project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' ORDER BY assignee";
 config.associates = "project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' ORDER BY assignee";
-config.managers = "project = 'Capabilities - Contribution' AND status not in (Closed)  AND issuetype = Story and labels in ('Manager', 'Sr_Manager','Director')  order by assignee, summary";
+config.managers = "project = Richemontlt AND status not in (Closed) AND issuetype = 'Tech Story' and labels in ('Manager', 'Sr_Manager','Director')  order by assignee";
 config.refresh = "3600";
 config.MONGODB_URI = 'mongodb://localhost:27017/eyp';
 

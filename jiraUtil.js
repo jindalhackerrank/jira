@@ -184,7 +184,7 @@ module.exports = {
 
 		peopleJSON.data = [];
 		dataObject.name = "";
-		numberOfPeopleInJira = jiraPeopleList.issues.length;
+		numberOfPeopleInJira = jiraPeopleList ? jiraPeopleList.issues.length : 0;
 
 		for(person=0;person<numberOfPeopleInJira;person++){
 			var supervisee = new Object();
