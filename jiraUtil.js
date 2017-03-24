@@ -15,7 +15,7 @@ module.exports = {
 		var coveredAL1 = 0, coveredAL2 = 0, coveredSAL1 = 0, coveredSAL2 = 0, coveredSAPM = 0, coveredManager = 0, coveredSrManager = 0, coveredDirector = 0;
 		var coveredAL1Percent = 0, coveredAL2Percent = 0, coveredSAL1Percent = 0, coveredSAL2Percent = 0, coveredSAPMPercent = 0, coveredManagerPercent = 0, coveredSrManagerPercent = 0, coveredDirectorPercent = 0;
 		var noOfGG = 0, noOfNGG = 0;
-		numberOfPeopleInJira = jiraPeopleList.issues.length;
+		numberOfPeopleInJira = jiraPeopleList ? jiraPeopleList.issues.length : 0;
 
 		//console.log("labels:"+JSON.stringify(jiraPeopleList, null, 2));
 
